@@ -10,3 +10,10 @@ LANGUAGES = {
     "en": {"flag": "us", "name": "English"},
     "zh": {"flag": "cn", "name": "中文"},
 }
+FEATURE_FLAGS = {
+    "ENABLE_TEMPLATE_REMOVE_FILTERS" : True,
+    "ENABLE_TEMPLATE_PROCESSING": True,
+    "HORIZONTAL_FILTER_BAR": True,
+    "DASHBOARD_NATIVE_FILTERS_SET": True,
+    "DASHBOARD_NATIVE_FILTERS":True,
+}
