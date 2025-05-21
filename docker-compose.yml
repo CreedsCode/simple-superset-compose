@@ -16,7 +16,7 @@ services:
       - DATABASE_USER=superset
       - DATABASE_PORT=5432
     ports:
-      - '8089:8088'
+      - '8081:8088'
   
   database:
     init: true
