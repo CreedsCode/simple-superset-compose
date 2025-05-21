@@ -10,7 +10,7 @@ PREFERRED_URL_SCHEME = os.environ.get('PREFERRED_URL_SCHEME', 'https')
 # The SQLAlchemy connection string to your database
 SQLALCHEMY_DATABASE_URI = os.environ.get(
     'SUPERSET_DB_URI',
-    f"postgresql+psycopg2://{os.environ.get('DATABASE_USER', 'superset')}:{os.environ.get('DATABASE_PASSWORD', 'secretsecret')}@{os.environ.get('DATABASE_HOST', 'db')}:{os.environ.get('DATABASE_PORT', '5432')}/{os.environ.get('DATABASE_DB', 'superset')}"
+    f"postgresql+psycopg2://{os.environ.get('DATABASE_USER', 'superset')}:{os.environ.get('DATABASE_PASSWORD', 'superset')}@{os.environ.get('DATABASE_HOST', 'database')}:{os.environ.get('DATABASE_PORT', '5432')}/{os.environ.get('DATABASE_DB', 'superset')}"
 )
 
 # Flask-WTF flag for CSRF
@@ -58,6 +58,7 @@ WEBSERVER_TIMEOUT = int(os.environ.get('WEBSERVER_TIMEOUT', '120'))
 GUNICORN_CMD_ARGS = os.environ.get('GUNICORN_CMD_ARGS', "--timeout 120 --limit-request-line 0 --limit-request-field_size 0")
 
 # CORS and domain configuration
+# Updated to match your actual domain
 SUPERSET_WEBSERVER_DOMAINS = ["esk80gskogcoo4kk8sk4os08.orbit.joinwebzero.com"]
 ENABLE_CORS = True
 CORS_OPTIONS = {
@@ -76,8 +77,9 @@ SESSION_COOKIE_SECURE = True
 APP_NAME = os.environ.get("APP_NAME", "Superset")
 APP_ICON = os.environ.get("APP_ICON", "/static/assets/images/superset-logo-horiz.png")
 
+# For debugging
 print("Loaded consolidated configuration.")
-print(f"SQLALCHEMY_DATABASE_URI: {SQLALCHEMY_DATABASE_URI[:50]}...")
+print(f"SQLALCHEMY_DATABASE_URI: {SQLALCHEMY_DATABASE_URI}")
 print(f"SECRET_KEY set: {bool(SECRET_KEY and SECRET_KEY != 'MyVerySecretKey')}")
 print(f"SUPERSET_WEBSERVER_DOMAINS: {SUPERSET_WEBSERVER_DOMAINS}")
 print(f"FEATURE_FLAGS: {FEATURE_FLAGS}")
